@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6b2546">
+  <meta name="description" content="Lana Presentes e Perfumaria — perfumes, cosméticos, presentes e variedades na Torre, Recife.">
+  <title>Lana Presentes e Perfumaria | Recife</title>
+  <style>
+    :root{
+      --wine:#6b2546;--wine-dark:#42162d;--rose:#f5e6ec;--pink:#d99ab2;
+      --cream:#fffaf7;--ink:#292329;--muted:#766b72;--gold:#b68b51;
+      --white:#fff;--shadow:0 18px 55px rgba(66,22,45,.12);--radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .topline{height:5px;background:linear-gradient(90deg,var(--wine),var(--pink),var(--gold))}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,250,247,.94);backdrop-filter:blur(14px);border-bottom:1px solid #eee2e7}
+    .nav{max-width:1160px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brandmark{width:43px;height:43px;border-radius:15px;background:var(--wine);color:white;display:grid;place-items:center;font-family:Georgia,serif;font-size:25px}
+    .brandname{font-family:Georgia,serif;font-size:18px;font-weight:700;color:var(--wine-dark);line-height:1.1}
+    .brandname small{display:block;font:600 9px/1.8 system-ui;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+    .navlinks{display:flex;align-items:center;gap:25px;font-size:13px;font-weight:650;color:#5f5159}
+    .navlinks a:hover{color:var(--wine)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;border-radius:999px;background:var(--wine);color:white;font-size:13px;font-weight:750;border:1px solid var(--wine);transition:.2s}
+    .btn:hover{background:var(--wine-dark);transform:translateY(-2px)}
+    .btn.light{background:white;color:var(--wine);border-color:#ead7e0}
+    .hero{max-width:1160px;margin:auto;padding:72px 22px 68px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--wine);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:800}
+    .eyebrow:before{content:"";width:25px;height:1px;background:var(--gold)}
+    h1{font:500 clamp(42px,6vw,68px)/1.04 Georgia,serif;letter-spacing:-1.8px;color:var(--wine-dark);margin:18px 0}
+    h1 em{font-weight:400;color:#b36d89}
+    .hero p{max-width:510px;color:var(--muted);font-size:16px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+    .hero-note{display:flex;gap:13px;align-items:center;margin-top:32px;color:var(--muted);font-size:12px}
+    .stars{color:#bd8d40;letter-spacing:2px;font-size:15px}
+    .hero-art{min-height:440px;position:relative;border-radius:38px;background:linear-gradient(145deg,#f4dce5,#e9bdcc 48%,#b76c8b);overflow:hidden;box-shadow:var(--shadow);display:grid;place-items:center}
+    .hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.5);border-radius:50%;width:340px;height:340px}
+    .hero-art:after{width:430px;height:430px}
+    .art-card{position:relative;z-index:1;width:70%;max-width:330px;min-height:310px;border:1px solid rgba(255,255,255,.7);background:rgba(255,250,247,.72);backdrop-filter:blur(9px);border-radius:170px 170px 28px 28px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;color:var(--wine-dark);box-shadow:0 20px 45px rgba(83,32,55,.14)}
+    .art-card .monogram{font:italic 82px Georgia,serif;color:var(--wine)}
+    .art-card strong{font:600 22px Georgia,serif;letter-spacing:1px}
+    .art-card span{font-size:9px;letter-spacing:3px;margin-top:9px}
+    .floating{position:absolute;z-index:2;background:white;border-radius:15px;padding:12px 16px;box-shadow:var(--shadow);font-size:11px;color:var(--wine);font-weight:750}
+    .float-one{top:42px;right:28px}.float-two{bottom:38px;left:25px}
+    section{padding:76px 22px}
+    .section-inner{max-width:1120px;margin:auto}
+    .section-head{text-align:center;max-width:650px;margin:0 auto 38px}
+    .section-head h2{font:500 clamp(32px,4vw,43px)/1.15 Georgia,serif;color:var(--wine-dark);margin:12px 0}
+    .section-head p{color:var(--muted);font-size:14px}
+    .categories{background:#fff}
+    .category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .category{padding:27px 20px;border:1px solid #f0e3e8;border-radius:20px;background:linear-gradient(145deg,#fff,#fff8fa);min-height:170px}
+    .category-icon{width:45px;height:45px;border-radius:15px;background:var(--rose);display:grid;place-items:center;font-size:22px;margin-bottom:18px}
+    .category h3{font:600 19px Georgia,serif;color:var(--wine-dark);margin:0 0 6px}
+    .category p{font-size:12px;color:var(--muted);margin:0}
+    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:28px}
+    .benefit{padding:20px;border-radius:16px;background:var(--rose);text-align:center}
+    .benefit strong{display:block;color:var(--wine-dark);font:600 17px Georgia,serif}
+    .benefit span{font-size:11px;color:var(--muted)}
+    .gallery{background:#f8eef2}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .photo-slot{min-height:220px;border:1.5px dashed #c99aaf;border-radius:20px;background:linear-gradient(145deg,#f4dfe7,#fff8fa);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;color:var(--wine)}
+    .photo-slot .camera{font-size:28px;margin-bottom:8px}
+    .photo-slot strong{font:600 17px Georgia,serif}
+    .photo-slot span{font-size:11px;color:#866b78;margin-top:5px;max-width:220px}
+    .reviews{display:grid;grid-template-columns:.8fr 1.2fr;gap:35px;align-items:center}
+    .rating-panel{background:var(--wine);color:white;border-radius:26px;padding:34px;text-align:center}
+    .rating-panel .score{font:500 66px Georgia,serif;line-height:1}
+    .rating-panel .stars{font-size:19px;margin:12px 0}
+    .rating-panel p{font-size:12px;color:#f4dce6}
+    .review-list{display:grid;gap:13px}
+    .review{padding:19px 21px;border:1px solid #eee1e7;border-radius:17px;background:white}
+    .review .stars{font-size:12px}
+    .review p{margin:7px 0;color:#574c53;font:italic 16px Georgia,serif}
+    .review small{font-size:11px;color:var(--muted)}
+    .visit{background:var(--wine-dark);color:white}
+    .visit .section-head h2{color:white}.visit .section-head p{color:#e7cbd7}
+    .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .info-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:25px}
+    .info-card h3{font:600 21px Georgia,serif;margin:0 0 13px}
+    .info-card p{font-size:13px;color:#f1dce5;margin:8px 0}
+    .map{width:100%;height:220px;border:0;border-radius:15px;margin-top:14px;background:#fff}
+    .visit .btn{background:#fff;color:var(--wine);border-color:#fff;margin-top:10px}
+    footer{padding:27px 22px;text-align:center;color:#8b7c84;font-size:11px}
+    .whatsapp{position:fixed;right:19px;bottom:19px;z-index:20;width:58px;height:58px;border-radius:50%;background:#1eaa63;color:white;display:grid;place-items:center;box-shadow:0 8px 25px rgba(0,0,0,.2);font-size:25px}
+    .whatsapp:hover{transform:translateY(-3px)}
+    @media(max-width:800px){
+      .navlinks{display:none}.hero{grid-template-columns:1fr;gap:32px;padding-top:48px}
+      .hero-art{min-height:350px}.category-grid{grid-template-columns:repeat(2,1fr)}
+      .reviews{grid-template-columns:1fr}.visit-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:520px){
+      .brandname{font-size:16px}.nav{padding:12px 16px}.nav>.btn{padding:10px 13px;font-size:11px}
+      .hero{padding:42px 18px 48px}.hero-art{min-height:300px;border-radius:27px}
+      .art-card{min-height:250px}.art-card .monogram{font-size:65px}
+      section{padding:58px 18px}.category-grid{gap:10px}.category{padding:19px 15px;min-height:155px}
+      .gallery-grid{grid-template-columns:1fr 1fr}.photo-slot{min-height:160px;padding:12px}
+      .benefits{grid-template-columns:1fr}.float-one{right:12px;top:18px}.float-two{left:12px;bottom:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#inicio" aria-label="Lana Presentes e Perfumaria - início">
+        <div class="brandmark">L</div>
+        <div class="brandname">Lana Presentes<small>e Perfumaria</small></div>
+      </a>
+      <div class="navlinks">
+        <a href="#sobre">A loja</a><a href="#categorias">Categorias</a><a href="#fotos">Fotos</a><a href="#avaliacoes">Avaliações</a><a href="#visite">Como chegar</a>
+      </div>
+      <a class="btn" href="https://wa.me/5581994206928?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Lana%20Presentes%20e%20Perfumaria." target="_blank" rel="noopener">Fale conosco ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <div class="eyebrow">Torre · Recife · Pernambuco</div>
+        <h1>Um carinho em forma de <em>presente.</em></h1>
+        <p>Perfumes, cosméticos, presentes e variedades para deixar seus dias — e os de quem você gosta — ainda mais especiais.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://wa.me/5581994206928?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos." target="_blank" rel="noopener">Consultar produtos ↗</a>
+          <a class="btn light" href="#visite">Conheça a loja</a>
+        </div>
+        <div class="hero-note"><span class="stars">★★★★★</span><span><strong>5,0 de 5</strong> · 34 avaliações no Google</span></div>
+      </div>
+      <div class="hero-art" aria-label="Arte decorativa da marca">
+        <div class="floating float-one">Presentes com carinho ✦</div>
+        <div class="art-card"><div class="monogram">L</div><strong>Lana</strong><span>PRESENTES & PERFUMARIA</span></div>
+        <div class="floating float-two">Beleza • cuidado • presentes</div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="eyebrow">Nossa loja</div>
+          <h2>Variedade para todos os momentos</h2>
+          <p>Um espaço para encontrar opções de beleza, autocuidado e presentes, com atendimento próximo e uma seleção variada de produtos.</p>
+        </div>
+        <div class="benefits">
+          <div class="benefit"><strong>Atendimento atencioso</strong><span>Uma experiência de compra acolhedora</span></div>
+          <div class="benefit"><strong>Opções para presentear</strong><span>Ideias para datas especiais e para o dia a dia</span></div>
+          <div class="benefit"><strong>Comodidade</strong><span>Compras na loja, retirada e entrega — consulte condições</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories" id="categorias">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="eyebrow">Explore</div>
+          <h2>O que você procura hoje?</h2>
+          <p>Consulte pelo WhatsApp a disponibilidade, marcas e opções de cada categoria.</p>
+        </div>
+        <div class="category-grid">
+          <article class="category"><div class="category-icon">✧</div><h3>Perfumaria</h3><p>Fragrâncias e opções para presentear.</p></article>
+          <article class="category"><div class="category-icon">♡</div><h3>Cosméticos</h3><p>Produtos de beleza e autocuidado.</p></article>
+          <article class="category"><div class="category-icon">🎁</div><h3>Presentes</h3><p>Ideias para datas especiais e surpresas.</p></article>
+          <article class="category"><div class="category-icon">✿</div><h3>Variedades</h3><p>Diversas opções para o dia a dia.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="fotos">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="eyebrow">Galeria</div>
+          <h2>Um pouquinho da nossa loja</h2>
+          <p>Espaço reservado para as fotografias originais da fachada, do interior e dos produtos da Lana Presentes e Perfumaria.</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="photo-slot"><div class="camera">▧</div><strong>Fachada da loja</strong><span>Substitua por foto original da fachada.</span></div>
+          <div class="photo-slot"><div class="camera">▧</div><strong>Interior da loja</strong><span>Substitua por foto original do ambiente.</span></div>
+          <div class="photo-slot"><div class="camera">▧</div><strong>Produtos</strong><span>Adicione fotos reais dos produtos disponíveis.</span></div>
+          <div class="photo-slot"><div class="camera">▧</div><strong>Perfumaria</strong><span>Adicione uma foto original da seção.</span></div>
+          <div class="photo-slot"><div class="camera">▧</div><strong>Presentes</strong><span>Adicione fotos de sugestões para presentear.</span></div>
+          <div class="photo-slot"><div class="camera">▧</div><strong>Novidades</strong><span>Use este espaço para lançamentos e ofertas.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="avaliacoes">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="eyebrow">Quem conhece, recomenda</div>
+          <h2>Opiniões de clientes</h2>
+          <p>Informações de avaliação fornecidas no perfil público da loja.</p>
+        </div>
+        <div class="reviews">
+          <div class="rating-panel"><div class="score">5,0</div><div class="stars">★★★★★</div><strong>34 avaliações</strong><p>Nota exibida no perfil da empresa no Google.</p></div>
+          <div class="review-list">
+            <article class="review"><div class="stars">★★★★★</div><p>“Uma loja linda, com muitas variedades de produtos.”</p><small>Trecho de avaliação compartilhado pelo cliente</small></article>
+            <article class="review"><div class="stars">★★★★★</div><p>“Boa localização, bom atendimento e preços acessíveis.”</p><small>Trecho de avaliação compartilhado pelo cliente</small></article>
+            <article class="review"><div class="stars">★★★★★</div><p>“Amo comprar nessa loja, ótimo atendimento.”</p><small>Trecho de avaliação compartilhado pelo cliente</small></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="visite">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="eyebrow">Esperamos sua visita</div>
+          <h2>Venha conhecer a Lana</h2>
+          <p>Estamos na Torre, em Recife. Fale com a loja para confirmar o horário antes de sair.</p>
+        </div>
+        <div class="visit-grid">
+          <div class="info-card">
+            <h3>📍 Endereço</h3>
+            <p>Rua Jornalista Luiz Teixeira, 9<br>Torre, Recife – PE<br>CEP 50620-660</p>
+            <p><strong>Telefone / WhatsApp:</strong><br>(81) 99420-6928</p>
+            <p><strong>Funcionamento:</strong><br>O perfil consultado informa fechamento às 19h. Confirme o horário do dia pelo WhatsApp.</p>
+            <a class="btn" href="https://wa.me/5581994206928" target="_blank" rel="noopener">Chamar no WhatsApp ↗</a>
+            <a class="btn" style="margin-left:7px" href="https://www.google.com/maps/search/?api=1&query=Rua+Jornalista+Luiz+Teixeira%2C+9%2C+Torre%2C+Recife%2C+PE" target="_blank" rel="noopener">Abrir rotas ↗</a>
+          </div>
+          <div class="info-card">
+            <h3>Encontre a loja</h3>
+            <p>Use o mapa para planejar sua visita.</p>
+            <iframe class="map" title="Mapa da Lana Presentes e Perfumaria" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Rua%20Jornalista%20Luiz%20Teixeira%2C%209%2C%20Torre%2C%20Recife%2C%20PE&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> Lana Presentes e Perfumaria · Recife, Pernambuco<br>Site demonstrativo — confirme informações, fotos e condições diretamente com a loja.</footer>
+  <a class="whatsapp" href="https://wa.me/5581994206928?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Lana%20Presentes%20e%20Perfumaria." target="_blank" rel="noopener" aria-label="Abrir conversa no WhatsApp">◉</a>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
